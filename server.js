@@ -22,7 +22,7 @@ app.get('/blog/', (request, response) => {
   const sideList = func.getSideList(entries);
 
   const entriesPerPage = 5;
-  const currentPage = parseInt(request.query.page, 10);
+  const currentPage = parseInt(request.query.page || 1, 10);
   const startIndex = (currentPage - 1) * entriesPerPage;
   const endIndex = startIndex + entriesPerPage;
   const displayEntries = entries.slice(startIndex, endIndex);

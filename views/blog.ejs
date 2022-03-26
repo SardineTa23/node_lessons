@@ -31,8 +31,11 @@
         </div>
         <% }) %>
       </article>
+      <% if (currentPage > 1) { %>
       <a href="?page=<%= currentPage - 1 %>">前のページへ</a>
+      <% } %> <% if (currentPage < lastPage) { %>
       <a href="?page=<%= currentPage + 1 %>">次のページへ</a>
+      <% } %>
     </div>
 
     <!-- サイドバー -->

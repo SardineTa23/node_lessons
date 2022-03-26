@@ -4,11 +4,12 @@
   "description": "Nodeの学習プロジェクト",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "ejs": "^3.1.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
   },
   "repository": "https://github.com/SardinTa23/node_lesson",
   "license": "MIT"

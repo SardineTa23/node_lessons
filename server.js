@@ -21,10 +21,16 @@ app.get('/blog/', (request, response) => {
   // サイドバーに表示する年月別記事リスト
   const sideList = func.getSideList(entries);
 
+  const currentPage = parseInt(request.query.page, 10);
+  const startIndex = (currentPage - 1) * 5;
+  const endIndex = startIndex + 5;
+  const displayEntries = entries.slice(startIndex, endIndex);
+
   // テンプレートを使用して出力したHTMLをクライアントに送信
   response.render('blog', {
-    entries,
-    sideList
+    entries: displayEntries,
+    sideList,
+    currentPage
   });
 });
 
